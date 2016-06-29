@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Margin size-->
+    <dimen name="margin_10dp">10dp</dimen>
+    <dimen name="margin_5dp">5dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_45dp">45dp</dimen>
+    <dimen name="margin_25dp">25dp</dimen>
+    <dimen name="margin_40dp">40dp</dimen>
+    <dimen name="margin_135dp">135dp</dimen>
+
+    <!--Text size-->
+    <dimen name="text_size_25dp">25dp</dimen>
+    <dimen name="text_size_90dp">90dp</dimen>
+    <dimen name="text_size_10dp">10dp</dimen>
+    <dimen name="text_size_15dp">15dp</dimen>
+    <dimen name="text_size_20dp">20dp</dimen>
+
+    <!--Length-->
+    <dimen name="length_0dp">0dp</dimen>
+    <dimen name="length_0.5dp">0.5dp</dimen>
+    <dimen name="length_1dp">1dp</dimen>
+    <dimen name="length_5dp">5dp</dimen>
+    <dimen name="length_15dp">15dp</dimen>
+    <dimen name="length_20dp">20dp</dimen>
+    <dimen name="length_90dp">90dp</dimen>
+    <dimen name="length_30dp">30dp</dimen>
+    <dimen name="length_50dp">50dp</dimen>
+    <dimen name="length_250dp">250dp</dimen>
+</resources>
