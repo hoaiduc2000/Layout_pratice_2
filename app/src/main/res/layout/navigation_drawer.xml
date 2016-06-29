@@ -4,6 +4,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <!-- The main content view -->
     <FrameLayout
         android:id="@+id/content_frame"
@@ -17,14 +18,16 @@
         </LinearLayout>
     </FrameLayout>
     <!-- The navigation drawer -->
+
     <ListView
-        app:headerLayout="@layout/header_drawer"
         android:id="@+id/left_drawer"
         android:layout_width="@dimen/length_250dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/colorNavDrawer"
         android:choiceMode="multipleChoice"
-        android:divider="@android:color/black"
-        android:dividerHeight="@dimen/length_1dp" />
+        android:divider="@color/colorDivider"
+        android:footerDividersEnabled="false"
+        android:dividerHeight="@dimen/length_0.5dp" />
+
 </android.support.v4.widget.DrawerLayout>

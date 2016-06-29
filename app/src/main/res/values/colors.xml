@@ -5,7 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorNavDrawer">#FFF5EDED</color>
     <color name="colorTextTitle">#FF0D0C0C</color>
+    <color name="colorTextHeader">#FFFCFCFC</color>
     <color name="colorText">#FF383434</color>
     <color name="colorTextBlur">#FFDEC8C8</color>
     <color name="colorItem">#FFDA9494</color>
+    <color name="colorDivider">#FFB1A9A9</color>
 </resources>
