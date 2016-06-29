@@ -47,12 +47,12 @@ public class NavDrawerListAdapter extends ArrayAdapter<NavDrawerItem> {
         final ImageView mImageView = (ImageView) convertView.findViewById(R.id.image_view_next);
         mTextView.setText(navDrawerItems.get(position).getTitle());
         if (position == 0 || position == 3) {
-            convertView.setBackgroundResource(R.color.colorItem);
-            mTextView.setTextColor(ContextCompat.getColor(mContext,R.color.colorTextTitle));
+            convertView.setBackgroundResource(R.color.color_Item);
+            mTextView.setTextColor(ContextCompat.getColor(mContext,R.color.color_TextTitle));
             mTextView.setTypeface(Typeface.DEFAULT_BOLD);
         }
         if (position == 1 || position == 4 || position == 5)
-        mTextView.setTextColor(ContextCompat.getColor(mContext,R.color.colorTextBlur));
+        mTextView.setTextColor(ContextCompat.getColor(mContext,R.color.color_TextBlur));
         if (position == 1 || position == 2 || position == 4 || position == 7)
             mImageView.setBackgroundResource(R.drawable.ic_action_next_item);
         return convertView;

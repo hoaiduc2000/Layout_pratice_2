@@ -20,14 +20,15 @@
     <dimen name="text_size_20dp">20dp</dimen>
 
     <!--Length-->
-    <dimen name="length_0dp">0dp</dimen>
-    <dimen name="length_0.5dp">0.5dp</dimen>
-    <dimen name="length_1dp">1dp</dimen>
-    <dimen name="length_5dp">5dp</dimen>
-    <dimen name="length_15dp">15dp</dimen>
-    <dimen name="length_20dp">20dp</dimen>
-    <dimen name="length_90dp">90dp</dimen>
-    <dimen name="length_30dp">30dp</dimen>
-    <dimen name="length_50dp">50dp</dimen>
-    <dimen name="length_250dp">250dp</dimen>
+    <dimen name="_0dp">0dp</dimen>
+    <dimen name="_0.5dp">0.5dp</dimen>
+    <dimen name="_1dp">1dp</dimen>
+    <dimen name="_5dp">5dp</dimen>
+    <dimen name="_15dp">15dp</dimen>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_90dp">90dp</dimen>
+    <dimen name="_100dp">100dp</dimen>
+    <dimen name="_30dp">30dp</dimen>
+    <dimen name="_50dp">50dp</dimen>
+    <dimen name="_250dp">250dp</dimen>
 </resources>

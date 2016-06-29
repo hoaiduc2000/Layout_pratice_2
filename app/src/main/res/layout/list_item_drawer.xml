@@ -20,13 +20,13 @@
             android:paddingBottom="@dimen/margin_4dp"
             android:layout_marginLeft="@dimen/margin_8dp"
             android:text="Item"
-            android:textColor="@color/colorText"
+            android:textColor="@color/color_Text"
             android:textSize="@dimen/text_size_20dp" />
 
         <ImageView
             android:id="@+id/image_view_next"
-            android:layout_width="@dimen/length_20dp"
-            android:layout_height="@dimen/length_20dp"
+            android:layout_width="@dimen/_20dp"
+            android:layout_height="@dimen/_20dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_gravity="right"

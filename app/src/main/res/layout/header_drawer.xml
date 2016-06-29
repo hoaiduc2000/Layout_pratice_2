@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_250dp"
+    android:layout_height="@dimen/_100dp"
+    android:gravity="center_vertical"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:paddingBottom="@dimen/_15dp"
+    android:paddingRight="@dimen/_15dp"
+    android:paddingLeft="@dimen/_15dp"
+    android:paddingTop="@dimen/_15dp"
+    android:background="@color/color_Text">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image_view_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_profile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="@color/color_TextHeader"
+            android:layout_marginLeft="@dimen/margin_10dp"
+            android:id="@+id/text_view_profile"
+            android:layout_toRightOf="@+id/image_view_circle"
+            android:text="@string/profile" />
+    </RelativeLayout>
 </LinearLayout>
