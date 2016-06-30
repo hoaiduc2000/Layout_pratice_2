@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mTitles = getResources().getStringArray(R.array.nav_drawer_items);
         View mHeader = getLayoutInflater().inflate(R.layout.header_drawer, null);
         mImageView = (ImageView) mHeader.findViewById(R.id.image_view_circle);
-        CircleImageView mCircleImageView = new CircleImageView(this);
+        CircleImageView mCircleImageView = new CircleImageView(this,200,200);
         mImageView.setImageBitmap(mCircleImageView.getRoundedShape(BitmapFactory
                 .decodeResource(getResources(), R.drawable.ic_tom_cruise)));
         mListView = (ListView) findViewById(R.id.left_drawer);
