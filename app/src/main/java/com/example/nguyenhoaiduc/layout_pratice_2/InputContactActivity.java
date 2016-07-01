@@ -5,7 +5,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,7 +19,7 @@ import view.CircleImageView;
 /**
  * Created by nguyen.hoai.duc on 6/30/2016.
  */
-public class InputContactActivity extends AppCompatActivity {
+public class InputContactActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private ImageView mImageViewChoose;
@@ -57,9 +59,6 @@ public class InputContactActivity extends AppCompatActivity {
     private ImageView mImageViewOption8;
     private ImageView mImageViewSearch1;
 
-    private int mWidthIcon;
-    private int mHeightIcon;
-
     private int mWidthAvatar;
     private int mHeightAvatar;
 
@@ -70,48 +69,85 @@ public class InputContactActivity extends AppCompatActivity {
         initData();
     }
 
-    public void checkScreen() {
-        Display mDisplay = getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        mDisplay.getSize(size);
-        int mWidth = size.x;
-        int mHeight = size.y;
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.imagge_view_expand_1:
+                if (mLinearLayoutEdit1.getVisibility() == View.GONE) {
+                    mLinearLayoutEdit1.setVisibility(View.VISIBLE);
+                    mLinearLayoutOption1.setBackgroundColor(0x00000000);
+                    mImageViewExpand1.setImageResource(R.drawable.ic_plus_circle_red_48dp);
 
-        if (mHeight < 1280) {
-            mWidthIcon = 50;
-            mHeightIcon = 50;
+                } else {
 
-            mWidthAvatar = 200;
-            mHeightAvatar = 200;
-        } else {
-            mWidthIcon = 80;
-            mHeightIcon = 80;
-
-            mWidthAvatar = 200;
-            mHeightAvatar = 200;
-        }
-
-        int screenSize = getResources().getConfiguration().screenLayout & Configuration
-                .SCREENLAYOUT_SIZE_MASK;
-        switch (screenSize) {
-            case Configuration.SCREENLAYOUT_SIZE_LARGE:
-                Toast.makeText(this, "SCREENLAYOUT_SIZE_LARGE" + " " + "Width: " + mWidth + " Height: " + mHeight + "", Toast.LENGTH_LONG).show();
+                    mLinearLayoutEdit1.setVisibility(View.GONE);
+                    mLinearLayoutOption1.setBackgroundColor(getResources().getColor(R.color.color_Blank));
+                    mImageViewExpand1.setImageResource(R.drawable.ic_plus_circle_black_48dp);
+                }
                 break;
-            case Configuration.SCREENLAYOUT_SIZE_NORMAL:
-                Toast.makeText(this, "SCREENLAYOUT_SIZE_NORMAL" + " " + "Width: " + mWidth + " Height: " + mHeight + "", Toast.LENGTH_LONG).show();
+            case R.id.imagge_view_expand_2:
+                if (mLinearLayoutEdit2.getVisibility() == View.GONE) {
+                    mLinearLayoutEdit2.setVisibility(View.VISIBLE);
+                    mLinearLayoutOption2.setBackgroundColor(0x00000000);
+                    mImageViewExpand2.setImageResource(R.drawable.ic_plus_circle_red_48dp);
+                } else {
+                    mLinearLayoutEdit2.setVisibility(View.GONE);
+                    mLinearLayoutOption2.setBackgroundColor(getResources().getColor(R.color.color_Blank));
+                    mImageViewExpand2.setImageResource(R.drawable.ic_plus_circle_black_48dp);
+                }
                 break;
-            case Configuration.SCREENLAYOUT_SIZE_SMALL:
-                Toast.makeText(this, "SCREENLAYOUT_SIZE_SMALL" + " " + "Width: " + mWidth + " Height: " + mHeight + "", Toast.LENGTH_LONG).show();
+            case R.id.imagge_view_expand_3:
+                if (mLinearLayoutEdit3.getVisibility() == View.GONE) {
+                    mLinearLayoutEdit3.setVisibility(View.VISIBLE);
+                    mLinearLayoutOption3.setBackgroundColor(0x00000000);
+                    mImageViewExpand3.setImageResource(R.drawable.ic_plus_circle_red_48dp);
+                } else {
+                    mLinearLayoutEdit3.setVisibility(View.GONE);
+                    mLinearLayoutOption3.setBackgroundColor(getResources().getColor(R.color.color_Blank));
+                    mImageViewExpand3.setImageResource(R.drawable.ic_plus_circle_black_48dp);
+                }
+                break;
+            case R.id.imagge_view_expand_4:
+                if (mLinearLayoutEdit4.getVisibility() == View.GONE) {
+                    mLinearLayoutEdit4.setVisibility(View.VISIBLE);
+                    mLinearLayoutOption4.setBackgroundColor(0x00000000);
+                    mImageViewExpand4.setImageResource(R.drawable.ic_plus_circle_red_48dp);
+                } else {
+                    mLinearLayoutEdit4.setVisibility(View.GONE);
+                    mLinearLayoutOption4.setBackgroundColor(getResources().getColor(R.color.color_Blank));
+                    mImageViewExpand4.setImageResource(R.drawable.ic_plus_circle_black_48dp);
+                }
+                break;
+            case R.id.imagge_view_expand_5:
+                if (mLinearLayoutEdit5.getVisibility() == View.GONE) {
+                    mLinearLayoutEdit5.setVisibility(View.VISIBLE);
+                    mLinearLayoutOption5.setBackgroundColor(0x00000000);
+                    mImageViewExpand5.setImageResource(R.drawable.ic_plus_circle_red_48dp);
+                } else {
+                    mLinearLayoutEdit5.setVisibility(View.GONE);
+                    mLinearLayoutOption5.setBackgroundColor(getResources().getColor(R.color.color_Blank));
+                    mImageViewExpand5.setImageResource(R.drawable.ic_plus_circle_black_48dp);
+                }
+                break;
+            case R.id.imagge_view_expand_6:
+                if (mLinearLayoutEdit6.getVisibility() == View.GONE) {
+                    mLinearLayoutEdit6.setVisibility(View.VISIBLE);
+                    mLinearLayoutOption6.setBackgroundColor(0x00000000);
+                    mImageViewExpand6.setImageResource(R.drawable.ic_plus_circle_red_48dp);
+                } else {
+                    mLinearLayoutEdit6.setVisibility(View.GONE);
+                    mLinearLayoutOption6.setBackgroundColor(getResources().getColor(R.color.color_Blank));
+                    mImageViewExpand6.setImageResource(R.drawable.ic_plus_circle_black_48dp);
+                }
                 break;
         }
     }
 
     public void initData() {
-        checkScreen();
+        mWidthAvatar = 200;
+        mHeightAvatar = 200;
         mImageViewChoose = (ImageView) findViewById(R.id.imagge_view_choose);
         mImageViewProfile = (ImageView) findViewById(R.id.image_view_profile);
-        mImageViewChoose.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_expand)));
         mImageViewProfile.setImageBitmap(new CircleImageView(this, mWidthAvatar, mHeightAvatar).getRoundedShape(BitmapFactory
                 .decodeResource(getResources(), R.drawable.ic_tom_cruise)));
 
@@ -139,6 +175,13 @@ public class InputContactActivity extends AppCompatActivity {
         mLinearLayoutEdit6 = (LinearLayout) findViewById(R.id.layout_edit_6);
         mLinearLayoutOption6 = (LinearLayout) findViewById(R.id.layout_option_6);
 
+        mImageViewExpand1.setOnClickListener(this);
+        mImageViewExpand2.setOnClickListener(this);
+        mImageViewExpand3.setOnClickListener(this);
+        mImageViewExpand4.setOnClickListener(this);
+        mImageViewExpand5.setOnClickListener(this);
+        mImageViewExpand6.setOnClickListener(this);
+
         mImageViewOption1 = (ImageView) findViewById(R.id.image_view_option_1);
         mImageViewOption2 = (ImageView) findViewById(R.id.image_view_option_2);
         mImageViewOption3 = (ImageView) findViewById(R.id.image_view_option_3);
@@ -149,139 +192,7 @@ public class InputContactActivity extends AppCompatActivity {
         mImageViewOption8 = (ImageView) findViewById(R.id.image_view_option_8);
         mImageViewSearch1 = (ImageView) findViewById(R.id.image_view_search_1);
 
-        mImageViewOption1.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_expand)));
-        mImageViewOption2.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_expand)));
-        mImageViewOption3.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_expand)));
-        mImageViewOption4.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_expand)));
-        mImageViewOption5.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_expand)));
-        mImageViewOption6.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_expand)));
-        mImageViewOption7.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_expand)));
-        mImageViewOption8.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_expand)));
-        mImageViewSearch1.setImageBitmap(new CircleImageView(this, mWidthIcon, mHeightIcon).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_search)));
-
-        setOnClick();
-
     }
 
-    public void setOnClick() {
-        mImageViewExpand1.setImageBitmap(new CircleImageView(this, 80, 80).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_plus)));
-        mImageViewExpand1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mLinearLayoutEdit1.getVisibility() == v.GONE) {
-                    mLinearLayoutEdit1.setVisibility(View.VISIBLE);
-                    mLinearLayoutOption1.setBackgroundColor(0x00000000);
-                } else {
-                    mLinearLayoutEdit1.setVisibility(View.GONE);
-                    mLinearLayoutOption1.setBackgroundColor(getResources().getColor(R.color.color_Blank));
-                }
-            }
-        });
 
-
-        mImageViewExpand2.setImageBitmap(new CircleImageView(this, 80, 80).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_plus)));
-        mImageViewExpand2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mLinearLayoutEdit2.getVisibility() == v.GONE) {
-                    mLinearLayoutEdit2.setVisibility(View.VISIBLE);
-                    mLinearLayoutOption2.setBackgroundColor(0x00000000);
-                } else {
-                    mLinearLayoutEdit2.setVisibility(View.GONE);
-                    mLinearLayoutOption2.setBackgroundColor(getResources().getColor(R.color.color_Blank));
-                }
-            }
-        });
-
-
-        mImageViewExpand3.setImageBitmap(new CircleImageView(this, 80, 80).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_plus)));
-        mImageViewExpand3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mLinearLayoutEdit3.getVisibility() == v.GONE) {
-                    mLinearLayoutEdit3.setVisibility(View.VISIBLE);
-                    mLinearLayoutOption3.setBackgroundColor(0x00000000);
-                } else {
-                    mLinearLayoutEdit3.setVisibility(View.GONE);
-                    mLinearLayoutOption3.setBackgroundColor(getResources().getColor(R.color.color_Blank));
-                }
-            }
-        });
-
-
-        mImageViewExpand4.setImageBitmap(new CircleImageView(this, 80, 80).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_plus)));
-        mImageViewExpand4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mLinearLayoutEdit4.getVisibility() == v.GONE) {
-                    mLinearLayoutEdit4.setVisibility(View.VISIBLE);
-                    mLinearLayoutOption4.setBackgroundColor(0x00000000);
-                } else {
-                    mLinearLayoutEdit4.setVisibility(View.GONE);
-                    mLinearLayoutOption4.setBackgroundColor(getResources().getColor(R.color.color_Blank));
-                }
-            }
-        });
-
-
-        mImageViewExpand5.setImageBitmap(new CircleImageView(this, 80, 80).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_plus)));
-        mImageViewExpand5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mLinearLayoutEdit5.getVisibility() == v.GONE) {
-                    mLinearLayoutEdit5.setVisibility(View.VISIBLE);
-                    mLinearLayoutOption5.setBackgroundColor(0x00000000);
-                } else {
-                    mLinearLayoutEdit5.setVisibility(View.GONE);
-                    mLinearLayoutOption5.setBackgroundColor(getResources().getColor(R.color.color_Blank));
-                }
-            }
-        });
-
-
-        mImageViewExpand6.setImageBitmap(new CircleImageView(this, 80, 80).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_plus)));
-        mImageViewExpand6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mLinearLayoutEdit6.getVisibility() == v.GONE) {
-                    mLinearLayoutEdit6.setVisibility(View.VISIBLE);
-                    mLinearLayoutOption6.setBackgroundColor(0x00000000);
-                } else {
-                    mLinearLayoutEdit6.setVisibility(View.GONE);
-                    mLinearLayoutOption6.setBackgroundColor(getResources().getColor(R.color.color_Blank));
-                }
-            }
-        });
-
-
-        mImageViewExpand1.setImageBitmap(new CircleImageView(this, 80, 80).getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_action_plus)));
-        mImageViewExpand1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mLinearLayoutEdit1.getVisibility() == v.GONE) {
-                    mLinearLayoutEdit1.setVisibility(View.VISIBLE);
-                    mLinearLayoutOption1.setBackgroundColor(0x00000000);
-                } else {
-                    mLinearLayoutEdit1.setVisibility(View.GONE);
-                    mLinearLayoutOption1.setBackgroundColor(getResources().getColor(R.color.color_Blank));
-                }
-            }
-        });
-    }
 }

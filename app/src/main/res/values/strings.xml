@@ -2,6 +2,15 @@
     <string name="app_name">Layout_pratice_2</string>
     <string name="hint">ABCD</string>
     <string name="profile">Profile The view of the side of a person face</string>
+    <string name="tag">Tag</string>
+    <string name="work">Work</string>
+    <string name="address">Add an address</string>
+    <string name="phone">Phone number</string>
+    <string name="email">Add an email address</string>
+    <string name="website">Add a website</string>
+    <string name="Join">Jointly</string>
+    <string name="Photo">Photos</string>
+    <string name="add_Photo">Add a photo</string>
 
     <!--Nav Drawer Menu Item-->
     <string-array name="nav_drawer_items">
