@@ -8,6 +8,7 @@
     <color name="color_TextHeader">#FFFCFCFC</color>
     <color name="color_Text">#FF383434</color>
     <color name="color_TextBlur">#FFDEC8C8</color>
-    <color name="color_Item">#FFDA9494</color>
+    <color name="color_Item">#FFEF9A9A</color>
     <color name="color_Divider">#FFB1A9A9</color>
+    <color name="color_Blank">#e0e0e0</color>
 </resources>
