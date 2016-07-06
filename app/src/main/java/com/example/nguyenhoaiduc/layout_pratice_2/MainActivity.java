@@ -8,13 +8,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import adapter.NavDrawerListAdapter;
 import model.NavDrawerItem;
-import view.CircleImageView;
+import custom.CircleImageView;
 
 /**
  * Created by nguyen.hoai.duc on 6/28/2016.
