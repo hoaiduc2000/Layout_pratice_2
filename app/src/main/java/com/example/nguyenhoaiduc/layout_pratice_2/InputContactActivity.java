@@ -1,5 +1,6 @@
 package com.example.nguyenhoaiduc.layout_pratice_2;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,11 +9,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.renderscript.Sampler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +27,6 @@ import java.util.ArrayList;
 import adapter.ImageGridAdapter;
 import custom.CircleImageView;
 import custom.ExpandableHeightGridView;
-import dialog.ListItemDialog;
 import model.ImageItem;
 import utils.Constrans;
 import view.AddressView;
@@ -52,6 +57,7 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
     private TitleView mTitleJointlyView;
 
     private String dir = "";
+    private String mDialogText = "";
     private int count = 0;
     private int flag = 0;
     private Uri outputFileUri;
@@ -66,6 +72,7 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
 
     private ExpandableHeightGridView mHeightGridView;
     private ImageGridAdapter mAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,13 +130,12 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
         mTitleAddressView.mImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AddressView mAddressView = new AddressView(getBaseContext(), mLinearLayout);
+                final AddressView mAddressView = new AddressView(getBaseContext(), mLinearLayout);
                 mAddressView.setOnclick((OcrView.OnRemoveLisnener) mContext);
                 mAddressView.mImageViewSearch.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ListItemDialog mListItemDialog = new ListItemDialog(getBaseContext());
-                        mListItemDialog.show();
+                        customDialog(mAddressView.mEditText);
                     }
                 });
                 mLinearLayout.addView(mAddressView, mLinearLayout.indexOfChild(mTitleAddressView));
@@ -297,5 +303,35 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
             }
         });
         builder.show();
+    }
+
+    public void customDialog(final EditText mEditText) {
+        final ArrayList<String> mStringArrayList = new ArrayList<>();
+        mStringArrayList.add("abcd1");
+        mStringArrayList.add("abcd2");
+        mStringArrayList.add("abcd3");
+        mStringArrayList.add("abcd4");
+        mStringArrayList.add("abcd5");
+        mStringArrayList.add("abcd6");
+        final Dialog mDialog = new Dialog(this);
+        mDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mDialog.setContentView(R.layout.dialog_list_item);
+        ListView mListView = (ListView) mDialog.findViewById(R.id.list_view_item);
+        TextView mTextView = (TextView) mDialog.findViewById(R.id.image_view_cancel);
+        mTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.dismiss();
+            }
+        });
+        mListView.setAdapter(new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, mStringArrayList));
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mEditText.setText(mStringArrayList.get(position));
+                mDialog.dismiss();
+            }
+        });
+        mDialog.show();
     }
 }

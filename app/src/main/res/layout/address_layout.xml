@@ -72,6 +72,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/edit_text_search_address"
                     android:gravity="center_vertical"
                     android:hint="@string/hint" />
             </android.support.design.widget.TextInputLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -16,6 +17,7 @@ public class AddressView extends OcrView {
     private LinearLayout mLinearLayout;
     public ImageView mImageView;
     public ImageView mImageViewSearch;
+    public EditText mEditText;
 
     public AddressView(Context context, ViewGroup viewGroup) {
         super(context);
@@ -27,6 +29,7 @@ public class AddressView extends OcrView {
     protected void setInitView(Context context, ViewGroup viewGroup) {
         mLinearLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.address_layout, viewGroup, false);
         mImageView = (ImageView) mLinearLayout.findViewById(R.id.image_view_remove2);
+        mEditText = (EditText) mLinearLayout.findViewById(R.id.edit_text_search_address);
         mImageViewSearch = (ImageView) mLinearLayout.findViewById(R.id.image_view_address_search);
         mImageView.setOnClickListener(new OnClickListener() {
             @Override
