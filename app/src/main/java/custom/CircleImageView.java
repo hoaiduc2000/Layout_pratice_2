@@ -1,16 +1,10 @@
-package view;
+package custom;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
-import android.widget.ImageView;
-
-import com.example.nguyenhoaiduc.layout_pratice_2.R;
 
 /**
  * Created by nguyen.hoai.duc on 6/29/2016.
