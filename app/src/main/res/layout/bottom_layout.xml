@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -27,6 +28,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/edit_text_option_2"
                 android:layout_marginLeft="@dimen/_16dp"
                 android:layout_marginRight="@dimen/_8dp"
                 android:hint="@string/hint" />
@@ -39,7 +41,6 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/_16dp"
             android:layout_marginTop="@dimen/_8dp"
-
             android:src="@drawable/ic_expand_more_black_24dp" />
     </RelativeLayout>
 
@@ -76,11 +77,12 @@
         android:text="@string/Photo" />
 
     <custom.ExpandableHeightGridView
+        android:id="@+id/expandable_grid_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/expandable_grid_view">
+        android:layout_height="wrap_content">
 
     </custom.ExpandableHeightGridView>
+
     <LinearLayout
         android:id="@+id/layout_option_7"
         android:layout_width="match_parent"

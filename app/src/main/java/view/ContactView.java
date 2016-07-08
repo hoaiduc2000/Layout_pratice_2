@@ -17,6 +17,8 @@ import com.example.nguyenhoaiduc.layout_pratice_2.R;
 public class ContactView extends LinearLayout {
     private LinearLayout mLinearLayout;
     public ImageView mImageView;
+    public ImageView mImageViewOption;
+    public EditText mEditText;
 
     public ContactView(Context context, ViewGroup viewGroup) {
         super(context);
@@ -27,6 +29,8 @@ public class ContactView extends LinearLayout {
     protected void setInitView(Context context, ViewGroup viewGroup) {
         mLinearLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.contact_layout, viewGroup, false);
         mImageView = (ImageView) mLinearLayout.findViewById(R.id.image_view_profile);
+        mImageViewOption = (ImageView) mLinearLayout.findViewById(R.id.image_view_option_1);
+        mEditText = (EditText) mLinearLayout.findViewById(R.id.edit_text_suffix);
 
     }
 }

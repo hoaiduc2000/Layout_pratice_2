@@ -1,32 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border"
     android:orientation="vertical">
 
     <ListView
         android:id="@+id/list_view_item"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:divider="@color/color_Divider"
+        android:dividerHeight="@dimen/_0.25dp">
 
     </ListView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_0.5dp"
+        android:background="@color/color_TextTitle"></FrameLayout>
+
     <LinearLayout
+        android:id="@+id/cancel_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="@dimen/_8dp">
 
         <TextView
+            android:id="@+id/image_view_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/_20dp"
-            android:text="Cancle" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ok" />
+            android:text="Cancle"
+            android:textColor="@color/text_view_hover"
+            android:textSize="@dimen/_16dp" />
 
     </LinearLayout>
 </LinearLayout>
