@@ -16,7 +16,7 @@ import com.example.nguyenhoaiduc.layout_pratice_2.R;
 public class AddressView extends OcrView {
     private LinearLayout mLinearLayout;
     public ImageView mImageView;
-    public ImageView mImageViewSearch;
+    public ImageView mImageViewOption;
     public EditText mEditText;
 
     public AddressView(Context context, ViewGroup viewGroup) {
@@ -29,8 +29,8 @@ public class AddressView extends OcrView {
     protected void setInitView(Context context, ViewGroup viewGroup) {
         mLinearLayout = (LinearLayout) LayoutInflater.from(context).inflate(R.layout.address_layout, viewGroup, false);
         mImageView = (ImageView) mLinearLayout.findViewById(R.id.image_view_remove2);
-        mEditText = (EditText) mLinearLayout.findViewById(R.id.edit_text_search_address);
-        mImageViewSearch = (ImageView) mLinearLayout.findViewById(R.id.image_view_address_search);
+        mEditText = (EditText) mLinearLayout.findViewById(R.id.edit_text_option);
+        mImageViewOption = (ImageView) mLinearLayout.findViewById(R.id.image_view_option_3);
         mImageView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
