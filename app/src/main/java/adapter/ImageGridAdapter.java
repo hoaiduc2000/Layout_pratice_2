@@ -25,6 +25,7 @@ public class ImageGridAdapter extends ArrayAdapter<ImageItem> {
     private Activity mContext;
     private int mLayoutId;
     private ArrayList<ImageItem> mImageItems;
+    private OnClickListenner mOnClickListenner;
     public ImageGridAdapter(Activity context, int resource, ArrayList<ImageItem> list) {
         super(context, resource, list);
         this.mContext = context;
@@ -37,15 +38,29 @@ public class ImageGridAdapter extends ArrayAdapter<ImageItem> {
         return mImageItems.size();
     }
 
+    public void setOnClickListener(OnClickListenner mOnClickListenner){
+        this.mOnClickListenner = mOnClickListenner;
+    }
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater mInflater = (LayoutInflater) mContext.getLayoutInflater();
             convertView = mInflater.inflate(mLayoutId, null);
         }
         final ImageView mImageView = (ImageView) convertView.findViewById(R.id.image_view_item);
         mImageView.setImageBitmap(mImageItems.get(position).getResizeBitmap());
+        mImageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                mOnClickListenner.setOnClick(position);
+                return true;
+            }
+        });
 
         return convertView;
+    }
+
+    public interface OnClickListenner{
+        void setOnClick(int position);
     }
 }

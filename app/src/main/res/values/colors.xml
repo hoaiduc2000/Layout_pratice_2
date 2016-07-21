@@ -4,12 +4,24 @@
     <color name="color_PrimaryDark">#303F9F</color>
     <color name="color_Accent">#FF4081</color>
     <color name="color_NavDrawer">#FFF5EDED</color>
-    <color name="color_TextTitle">#FF0D0C0C</color>
+    <color name="color_Background">#ffffff</color>
+    <color name="color_TextTitle">#9d9d9d</color>
     <color name="color_TextHeader">#FFFCFCFC</color>
     <color name="color_Text">#FF383434</color>
     <color name="color_TextBlur">#FFDEC8C8</color>
-    <color name="color_Item">#FFEF9A9A</color>
+    <color name="color_Item">#f8cecc</color>
     <color name="color_Button">#FFCF2424</color>
     <color name="color_Divider">#FFB1A9A9</color>
-    <color name="color_Blank">#e0e0e0</color>
+    <color name="color_Header">#CB000D</color>
+    <color name="color_Blank">#f1f1f0</color>
+    <color name="color_Hint">#FFFFFF</color>
+    <color name="title_Background">#9e9e9e</color>
+    <color name="title_Color">#b71c1c</color>
+    <color name="background_preview">#ffe57f</color>
+    <color name="layout_footer_preview">#c2bebd</color>
+    <color name="layout_header_person">#9b9b9b</color>
+    <color name="layout_avatar_person">#e6e6e6</color>
+    <color name="layout_address_person">#c7c7c7</color>
+
+
 </resources>

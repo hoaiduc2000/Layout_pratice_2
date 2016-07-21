@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8dp"
-            android:src="@drawable/ic_plus_circle_red_48dp" />
+            android:src="@drawable/btn_sub" />
 
         <TextView
             android:layout_width="wrap_content"

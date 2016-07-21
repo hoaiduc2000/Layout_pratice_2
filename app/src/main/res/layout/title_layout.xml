@@ -13,12 +13,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_8dp"
-        android:src="@drawable/image_view_hover" />
+        android:src="@drawable/btn_add" />
 
     <TextView
         android:id="@+id/text_view_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/color_TextTitle"
         android:layout_marginLeft="@dimen/_8dp" />
 
 </LinearLayout>

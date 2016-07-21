@@ -1,5 +1,6 @@
 package com.example.nguyenhoaiduc.layout_pratice_2;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,6 +23,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.io.File;
@@ -49,7 +51,7 @@ import view.WorkView;
 /**
  * Created by nguyen.hoai.duc on 7/4/2016.
  */
-public class InputContactActivity extends AppCompatActivity implements OcrView.OnRemoveLisnener {
+public class InputContactActivity extends Activity implements OcrView.OnRemoveLisnener, ImageGridAdapter.OnClickListenner {
 
 
     public LinearLayout mLinearLayout;
@@ -61,10 +63,11 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
     private TitleView mTitleWebView;
     private TitleView mTitleAddressView;
     private TitleView mTitleJointlyView;
+    private ImageView mImageViewBack;
 
-    private String dir = "";
+    private String mDir = "";
     private String mDialogText = "";
-    private int count = 0;
+    private int mCount = 0;
     private int flag = 0;
     private Uri outputFileUri;
     private CharSequence action[] = new CharSequence[]{"Capture Picture", "Open Gallery"};
@@ -79,70 +82,16 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
     private ExpandableHeightGridView mHeightGridView;
     private ImageGridAdapter mAdapter;
 
-    private String[] mTitles;
-    private ArrayList<NavDrawerItem> mNavDrawerItemArrayList;
-    private NavDrawerListAdapter mNavDrawerListAdapter;
-    private ListView mListView;
-    private ImageView mImageView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
         setContentView(R.layout.activity_input_contact);
-        initDataNav();
         initData();
 
     }
 
-    public void initDataNav() {
-        mNavDrawerItemArrayList = new ArrayList();
-        mTitles = getResources().getStringArray(R.array.nav_drawer_items);
-        View mHeader = getLayoutInflater().inflate(R.layout.header_drawer, null);
-        mImageView = (ImageView) mHeader.findViewById(R.id.image_view_circle);
-        CircleImageView mCircleImageView = new CircleImageView(this,200,200);
-        mImageView.setImageBitmap(mCircleImageView.getRoundedShape(BitmapFactory
-                .decodeResource(getResources(), R.drawable.ic_tom_cruise)));
-        mListView = (ListView) findViewById(R.id.left_drawer);
-        mListView.addHeaderView(mHeader, null, false);
-        for (int i = 0; i < mTitles.length; i++)
-            mNavDrawerItemArrayList.add(new NavDrawerItem(i, mTitles[i]));
-        mNavDrawerListAdapter = new NavDrawerListAdapter(this, R.layout.list_item_drawer,
-                mNavDrawerItemArrayList);
-        mListView.setAdapter(mNavDrawerListAdapter);
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                switch (position) {
-                    case 1:
-                        break;
-
-                    case 2:
-                        break;
-
-                    case 3:
-                        break;
-
-                    case 4:
-                        break;
-
-                    case 5:
-                        break;
-
-                    case 6:
-                        break;
-
-                    case 7:
-                        break;
-
-                    case 8:
-                        break;
-                }
-            }
-        });
-    }
 
     public void initData() {
         mLinearLayout = (LinearLayout) findViewById(R.id.linear_layout_parent);
@@ -171,6 +120,9 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
         mTitleEmailView.mTextView.setText(getResources().getText(R.string.title_email));
         mTitlePhoneView.mTextView.setText(getResources().getText(R.string.title_phone));
         mTitleAddressView.mTextView.setText(getResources().getText(R.string.title_address));
+
+        mImageViewBack = (ImageView) findViewById(R.id.image_back);
+        mImageViewBack.setVisibility(View.VISIBLE);
         setOnClick();
 
     }
@@ -297,7 +249,14 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
             }
         });
 
+        mImageViewBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         mAdapter = new ImageGridAdapter(this, R.layout.image_layout, mImageItems);
+        mAdapter.setOnClickListener(this);
         mHeightGridView = (ExpandableHeightGridView) findViewById(R.id.expandable_grid_view);
         mHeightGridView.setNumColumns(3);
         mHeightGridView.setExpanded(true);
@@ -308,21 +267,21 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
 
     public void createFolder() {
 
-        dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/picFolder/";
-        File newdir = new File(dir);
-        newdir.mkdirs();
+        mDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES) + "/picFolder/";
+        File mNewdir = new File(mDir);
+        mNewdir.mkdirs();
 
     }
 
     public void capturePic() {
-        count++;
-        String file = dir + count + ".jpg";
-        File newfile = new File(file);
+        mCount++;
+        String mFile = mDir + mCount + ".jpg";
+        File mNewfile = new File(mFile);
         try {
-            newfile.createNewFile();
+            mNewfile.createNewFile();
         } catch (IOException e) {
         }
-        outputFileUri = Uri.fromFile(newfile);
+        outputFileUri = Uri.fromFile(mNewfile);
 
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, outputFileUri);
@@ -439,5 +398,24 @@ public class InputContactActivity extends AppCompatActivity implements OcrView.O
             }
         });
         mDialog.show();
+    }
+
+    @Override
+    public void setOnClick(final int position) {
+        new AlertDialog.Builder(this)
+                .setTitle("Remove field")
+                .setMessage("Are you sure you want to remove this photo ?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        mImageItems.remove(position);
+                        mAdapter.notifyDataSetChanged();
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 }

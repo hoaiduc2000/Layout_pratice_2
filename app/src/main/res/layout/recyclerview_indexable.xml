@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.SearchView>
+
+    <model.LetterBar
+        android:id="@+id/letter_bar"
+        android:layout_width="@dimen/_20dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/search_view"
+        android:paddingBottom="@dimen/_20dp"
+        android:paddingTop="@dimen/_20dp"
+        app:textSize="@dimen/_20dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_view"
+        android:layout_marginRight="@dimen/_4dp"
+        android:layout_toLeftOf="@id/letter_bar" />
+
+    <FrameLayout
+        android:id="@+id/frame_tip"
+        android:layout_width="@dimen/_100dp"
+        android:layout_height="@dimen/_100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/_20dp"
+        android:background="@drawable/tip_text_background"
+        android:foregroundGravity="center"
+        android:paddingBottom="@dimen/_8dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tip_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/title_Color"
+            android:textSize="@dimen/_80dp" />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/image_float"
+        android:layout_width="@dimen/_60dp"
+        android:layout_height="@dimen/_60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/_16dp"
+        android:background="@drawable/ic_plus_circle_red_48dp"
+        android:elevation="@dimen/_20dp" />
+</RelativeLayout>

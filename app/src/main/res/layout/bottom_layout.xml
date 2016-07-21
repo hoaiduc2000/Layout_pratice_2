@@ -40,8 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_8dp"
-            android:src="@drawable/ic_expand_more_black_24dp" />
+            android:layout_marginTop="@dimen/_16dp"
+            android:src="@drawable/btn_kinof" />
     </RelativeLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_8dp"
-            android:src="@drawable/ic_plus_circle_black_48dp" />
+            android:src="@drawable/ocr_add_off" />
 
         <TextView
             android:layout_width="wrap_content"
