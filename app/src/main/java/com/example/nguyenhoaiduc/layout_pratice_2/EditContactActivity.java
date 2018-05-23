@@ -202,6 +202,26 @@ public class EditContactActivity extends Activity  {
         mImageViewFouthAnimator.start();
         mImageViewFifthAnimator.start();
 
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+
+        while(!mImageViewSecondAnimator.isRunning()){
+            mImageViewSecond.setVisibility(View.GONE);
+        }
+        while(!mImageViewThirdAnimator.isRunning()){
+            mImageViewThird.setVisibility(View.GONE);
+        }
+        while(!mImageViewFouthAnimator.isRunning()){
+            mImageViewFouth.setVisibility(View.GONE);
+        }
+        while(!mImageViewFifthAnimator.isRunning()){
+            mImageViewFifth.setVisibility(View.GONE);
+        }
+
     }
 
 }
